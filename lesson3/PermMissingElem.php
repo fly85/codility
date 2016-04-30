@@ -4,21 +4,30 @@
  * @return integer missing element
  *
  * @see https://codility.com/demo/take-sample-test/perm_missing_elem/
- * @see https://codility.com/demo/results/trainingNZGHNZ-6SE/
+ * @see https://codility.com/demo/results/training5WVMRZ-473/
  */
 function solution($A) {
   if(empty($A)) {
     return 1;
   }
 
-  $count_a = count($A);
-
   sort($A);
-  for ($i = 1; $i <= $count_a; $i++) {
-    if($i !== $A[$i - 1]) {
-      return $i;
-    }
-  }
+  $count_a = count($A);
+  $dico_index = floor($count_a / 2);
 
-  return $count_a + 1;
+  $missing = _dico_search_missing($A, $dico_index, $count_a);
+
+  return intval($missing);
+}
+
+function _dico_search_missing($stash, $index, $upper) {
+  if($index == $upper) {
+    return $index + 1;
+  }
+  if($stash[$index] != $index + 1) {
+    return _dico_search_missing($stash, floor($index / 2), $index);
+  }
+  else {
+    return _dico_search_missing($stash, ceil(($upper - $index) / 2) + $index, $upper);
+  }
 }
