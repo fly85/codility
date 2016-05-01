@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @param array $number_on_tape a non-empty zero-indexed of N integers
  * @return integer the minimal difference that can be achieved
@@ -24,3 +25,4 @@ function solution($number_on_tape) {
 
   return $minimal_diff;
 }
+

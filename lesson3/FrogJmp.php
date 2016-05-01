@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @param integer $X frog position
  * @param integer $Y frog minimal destination

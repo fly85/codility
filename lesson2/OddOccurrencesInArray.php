@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @param array $A a non-empty zero-indexed of N integers
  * @return integer the value of the unpaired element

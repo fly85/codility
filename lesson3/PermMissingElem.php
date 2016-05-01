@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @param array $A a zero-indexed array of N different integers in the range [1..(N + 1)]
  * @return integer missing element
@@ -31,3 +32,4 @@ function _dico_search_missing($stash, $index, $upper) {
     return _dico_search_missing($stash, ceil(($upper - $index) / 2) + $index, $upper);
   }
 }
+
